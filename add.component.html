@@ -1,0 +1,47 @@
+<h3>Add order</h3>
+<nav class ="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class = "navbar-nav">
+    <li class = "nav-item">
+      <a routerLink="signUp" routerLinkActive="active" class = "nav-link">Logout</a>
+    </li>
+  </ul>
+</nav>
+
+
+<form>
+
+  <div class="form-group"></div>
+    <div style="color: red;"  *ngIf="valid">Please fill all mandatory fields</div>
+    <span id="asterisk"></span>
+
+
+  
+
+   <div class="form-group">
+    <label for="uid"><b>User Id</b></label>
+    <input type="number" class="form-control" name="userId"   [(ngModel)] = "userId" required>
+  </div>
+
+  <div class="form-group">
+    <label for="dte"> Created date </label>
+    <input type="date" class="form-control"  name="date" [(ngModel)] = "date" required>
+  </div>
+
+  <div>
+    <label>grouped Products</label>
+      
+  </div>
+  <div class="form-group">
+    <label for="prd"><b>Product Id</b></label>
+      <input type="number" class="form-control" name="sweetOrder.product.productId" [(ngModel)] = "productId" required>
+      Product Name <input type="text" class="form-control"  [(ngModel)] = "name" name="name">
+      Product Price <input type="text" class="form-control"  [(ngModel)] = "price" name="price">
+      
+      <label for="cat"><b> Category Id</b></label>
+       <input type="number" class="form-control"  [(ngModel)] = "categoryId" name="categoryId">
+   </div> 
+  <button class = "btn btn-success" type = "submit" (click)="addSweetOrder()"><b>Add Order</b></button><br><br>
+
+</form>
+
+
